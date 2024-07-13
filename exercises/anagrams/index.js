@@ -11,21 +11,21 @@
 // function anagrams(stringA, stringB) {
 //   const cleanString = (str) => str.replace(/[^\w]/g, '').toLowerCase();
 //   const sortedString = (str) => cleanString(str).split('').sort().join('');
-//
+
 //   const sortedA = sortedString(stringA);
 //   const sortedB = sortedString(stringB);
-//
+
 //   return sortedA === sortedB;
 // }
 
+const anagrams = (strA, strB) => {
+  const cleanString = (str) => str.replace(/[^\w]/g, '').toLowerCase();
+  const sortedStr = (str) => cleanString(str).split('').sort().join('');
 
+  const sortedA = sortedStr(strA);
+  const sortedB = sortedStr(strB);
 
-const anagrams = (stringA, stringB) => {
-  let arrA = stringA.replace(/[^\w]/g, '').toLowerCase().split('').sort().join('');
-  let arrB = stringB.replace(/[^\w]/g, '').toLowerCase().split('').sort().join('');
-  
-  return arrA === arrB
-}
+  return sortedA === sortedB;
+};
 
-console.log(anagrams('hello', 'llohe'))
 module.exports = anagrams;
