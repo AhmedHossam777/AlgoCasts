@@ -8,21 +8,15 @@
 //   vowels('Why?') --> 0
 
 function vowels(str) {
-	const vowels = ['a', 'e', 'i', 'o', 'u'];
-	const strArr = str.toLowerCase().split('')
-	let numberOfVowels = 0
+  let numberOfVowels = 0;
+  const vowels = ['a', 'e', 'i', 'o', 'u'];
+  let arr = str.toLowerCase().split('');
 
-	for (let char of strArr) {
-		for (let i=0; i < vowels.length; i++) {
-			if (char === vowels[i]) {
-				numberOfVowels += 1;
-			}
-		}
-	}
+  for (let arrElement of arr) {
+    if (vowels.includes(arrElement)) numberOfVowels++;
+  }
 
-	return numberOfVowels;
+  return numberOfVowels;
 }
-
-console.log(vowels('Why do you ask?'));
 
 module.exports = vowels;
